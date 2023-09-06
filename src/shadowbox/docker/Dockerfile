@@ -56,9 +56,8 @@ RUN /etc/periodic/weekly/update_mmdb
 RUN mkdir -p /root/shadowbox/persisted-state
 
 # Copy Phobos files
-COPY src/shadowbox/docker/phobos/phobos.crt /root/shadowbox/persisted-state/phobos.crt
-COPY src/shadowbox/docker/phobos/phobos.key /root/shadowbox/persisted-state/phobos.key
-COPY src/shadowbox/docker/phobos/shadowbox_server_config.json /root/shadowbox/persisted-state/shadowbox_server_config.json
+COPY src/shadowbox/docker/phobos/phobos.crt /root/shadowbox/phobos.crt
+COPY src/shadowbox/docker/phobos/phobos.key /root/shadowbox/phobos.key
 
 # Install shadowbox.
 WORKDIR /opt/outline-server
