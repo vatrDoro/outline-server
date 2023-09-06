@@ -182,9 +182,10 @@ export class ServerAccessKeyRepository implements AccessKeyRepository {
     if (!isValidCipher(encryptionMethod)) {
       throw new errors.InvalidCipher(encryptionMethod);
     }
+    const port = params?.port ?? this.portForNewAccessKeys;
     const proxyParams = {
       hostname: this.proxyHostname,
-      portNumber: this.portForNewAccessKeys,
+      portNumber: port,
       encryptionMethod,
       password,
     };
