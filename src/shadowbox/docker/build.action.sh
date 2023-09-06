@@ -31,5 +31,6 @@ docker build --force-rm \
     --build-arg NODE_IMAGE="${NODE_IMAGE}" \
     --build-arg GITHUB_RELEASE="${TRAVIS_TAG:-none}" \
     -f src/shadowbox/docker/Dockerfile \
-    -t "${SB_IMAGE:-outline/shadowbox}" \
+    -t "${SB_IMAGE:-outline/shadowbox}":"${SB_IMAGE_BUILD_NUMBER:-1}" \
+    -t "${SB_IMAGE:-outline/shadowbox}":latest \
     "${ROOT_DIR}"
